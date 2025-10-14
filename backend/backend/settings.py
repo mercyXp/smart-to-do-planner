@@ -41,6 +41,7 @@ INSTALLED_APPS = [
      # Third-party
     'rest_framework',
     'corsheaders',
+    'rest_framework.authtoken',  # optional but useful
 
     # Local
     'users',
@@ -64,8 +65,12 @@ CORS_ALLOW_ALL_ORIGINS = True  # For development purposes only
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
+
 
 ROOT_URLCONF = 'backend.urls'
 
