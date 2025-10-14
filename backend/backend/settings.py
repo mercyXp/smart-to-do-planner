@@ -119,6 +119,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
+
+AUTHENTICATION_BACKENDS = [
+    'users.backends.EmailOrUsernameBackend',
+    'django.contrib.auth.backends.ModelBackend',  # fallback default
+]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
