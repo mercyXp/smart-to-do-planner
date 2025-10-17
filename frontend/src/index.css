@@ -1,68 +1,58 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* ===================================
+      GLOBAL THEME SYSTEM
+   =================================== */
+@layer base{
+        /*LIGHT MODE THEME*/
+  :root{
+    --color-bg: 255 255 255;
+    --color-text: 6 26 75;
+    --color-bg-muted: 216 221 227;
+    --color-text-muted: 68 94 171;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+        /* Typography */
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Georgia', serif;
+    --font-mono: 'Menlo', monospace;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+        /* Border Radius */
+    --radius: 0.5rem;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+        /*Interface*/
+          /*Actions*/
+    --color-primary-bg: 60 131 246;/* blue: used for key interface elements like headers, buttons, or highlights that represent primary actions or branding */
+    --color-primary-text: 255 255 255;
+    --color-secondary-bg: 209 217 224;
+    --color-secondary-text: 14 34 88;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+    --color-accent-bg: 209 217 224; /* gray: used for secondary interface elements or less prominent features */
+    --color-accent-text: 14 34 88;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+    --color-destructive-bg: 225 76 76;
+    --color-destructive-text: 250 250 250;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+        /*Form Elements*/
+    --color-input: 185 191 202;
+    --color-border: 235 236 240;
+    --color-border-focus: 60 131 246;
+
+        /*Card Variables */
+    --color-card-bg: 243 244 246;      /* #f3f4f6 */
+    --color-card-text: 6 26 75;        /* #061a4b */
+    
+        /*Popover Variables */
+    --color-popover-bg: 226 229 233;   /* #e2e5e9 */
+    --color-popover-text: 6 26 75;     /* #061a4b */
+    
+        /*Chart Color Variables */
+    --color-chart-1: 255 122 82;       /* #ff7a52 */
+    --color-chart-2: 22 202 106;       /* #16ca6a */
+    --color-chart-3: 164 33 181;       /* #a421b5 */
+    --color-chart-4: 246 174 49;       /* #f6ae31 */
+    --color-chart-5: 60 131 246;       /* #3c83f6 */
+
   }
 }
