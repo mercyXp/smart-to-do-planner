@@ -1,11 +1,11 @@
 :root {
-  font-family: 'Inter', 'Noto Sans Georgian', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgb(255, 255, 255);
-  background-color: #061946;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,7 +47,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #004ac2;
+  border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
@@ -57,12 +57,12 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #fffffff1;
+    background-color: #ffffff;
   }
   a:hover {
-    color: #3C83F6;
+    color: #747bff;
   }
   button {
-    background-color: #3C83F6;
+    background-color: #f9f9f9;
   }
 }
