@@ -91,5 +91,37 @@
     --chart-4: 255 178 36;
     --chart-5: 60 131 246;
   }
+  
+  /* GLOBAL BODY STYLES */
+  body {
+    @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] font-sans transition-colors duration-300 antialiased;
+  }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-[rgb(var(--color-text))];
+  }
+
+  a {
+    @apply text-[rgb(var(--color-primary-text))] hover:underline;
+  }
+
+  button {
+    border-radius: var(--radius);
+  }
+
+  input, textarea {
+    @apply bg-[rgb(var(--color-input))] border border-[rgb(var(--color-border))] focus:border-[rgb(var(--color-border-focus))] rounded-md px-3 py-2 outline-none;
+  }
+
+  .card {
+    @apply bg-[rgb(var(--color-card-bg))] text-[rgb(var(--color-card-text))] p-4 rounded-[var(--radius)] shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-[rgb(var(--color-primary-bg))] text-[rgb(var(--color-primary-text))] font-semibold px-4 py-2 rounded-[var(--radius)] hover:opacity-90;
+  }
+
+  .btn-destructive {
+    @apply bg-[rgb(var(--color-destructive-bg))] text-[rgb(var(--color-destructive-text))] font-semibold px-4 py-2 rounded-[var(--radius)] hover:opacity-90;
+  }
 }
