@@ -55,4 +55,41 @@
     --color-chart-5: 60 131 246;       /* #3c83f6 */
 
   }
+
+        /*DARK MODE THEME*/
+  .dark {
+    --color-bg: 6 25 70; /* #061946 */
+    --color-text: 250 250 250; /* #fafafa */
+    --color-bg-muted: 220 223 228; /* #dcdfe4 */
+    --color-text-muted: 61 93 169; /* #3d5da9 */
+
+    /* Interface */
+    --color-primary-bg: 233 230 37;
+    --color-primary-text: 250 250 250;
+    --color-secondary-bg: 212 215 222;
+    --color-secondary-text: 8 34 94;
+
+    --color-accent-bg: 212 215 222;
+    --color-accent-text: 8 34 94;
+
+    --color-destructive-bg: 239 67 67;
+    --color-destructive-text: 250 250 250;
+
+    --color-input: 192 196 206;
+    --color-border: 229 231 235;
+    --color-border-focus: 233 230 37;
+
+    --color-card-bg: 243 244 246;
+    --color-card-text: 6 25 70;
+    --color-popover-bg: 229 231 235;
+    --color-popover-text: 6 25 70;
+
+    /* Charts remain the same */
+    --chart-1: 255 128 82;
+    --chart-2: 33 196 93;
+    --chart-3: 155 39 176;
+    --chart-4: 255 178 36;
+    --chart-5: 60 131 246;
+  }
+
 }
