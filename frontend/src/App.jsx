@@ -1,4 +1,5 @@
-import ThemeToggle from './components/ThemeToggle.jsx';
+import { useTheme } from './contexts/ThemeProvider'; // Import from same file
+import { ThemeToggle } from './components/ThemeToggle';
 
 function App(){
   return (
