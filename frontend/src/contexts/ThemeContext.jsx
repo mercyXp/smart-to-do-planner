@@ -1,5 +1,9 @@
 import React from 'react';
 
-const ThemeContext = React.createContext();
+// context with default values
+const ThemeContext = React.createContext({
+  isDark: false,
+  toggleTheme: () => {},
+});
 
 export default ThemeContext;
