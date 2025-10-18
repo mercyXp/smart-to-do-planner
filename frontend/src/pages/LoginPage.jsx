@@ -60,7 +60,7 @@ function LoginPage() {
             <p className="text-center text-sm text-gray-600 dark:text-gray-400">
               Don’t have an account?{" "}
               <Link
-                to="/signup"
+                to="/register"
                 className="text-[#3C83F6] hover:underline font-medium"
               >
                 Create one
