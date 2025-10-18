@@ -12,9 +12,9 @@ function ThemeToggleButton() {
       aria-label="Toggle theme"
     >
       {isDark ? (
-       <Moon className="h-4 w-4" />
+         <Sun className="h-4 w-4" />
       ) : (
-       <Sun className="h-4 w-4" />
+        <Moon className="h-4 w-4" />
       )}
     </button>
   );

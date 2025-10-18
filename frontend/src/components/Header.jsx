@@ -43,8 +43,8 @@ function Header({user}){
                     <ThemeToggleButton />
                     {!user ? (
                         <>
-                            <button className="px-4 py-2 rounded-md border border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white transition">Login</button>
-                            <button className="px-4 py-2 rounded-md bg-[var(--color-primary)] text-white hover:opacity-90 transition">Get Started</button>
+                            <button className="px-4 py-2 rounded-md border border-primary hover:bg-primary hover:text-primary-foreground transition">Login</button>
+                            <button className="px-4 py-2 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition"> Get Started</button>
                         </>
                     ) : (
                         // User Avatar Placeholder
