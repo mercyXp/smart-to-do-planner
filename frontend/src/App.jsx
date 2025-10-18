@@ -1,15 +1,16 @@
-import React from 'react';
-import ThemeToggleButton from '@/components/ThemeToggleButton';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LandingPage from '@/components/LandingPage';
+import AppRoutes from '@/routes/AppRoutes';
 
 function App(){
    return (
     <>
+    <Router>
       <Header/>
-      <LandingPage/>
+      <AppRoutes /> 
       <Footer/>
+    </Router>
     </>
   );
 }

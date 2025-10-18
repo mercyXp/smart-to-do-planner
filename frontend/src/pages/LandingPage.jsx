@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle, Target, BarChart, Calendar, Plus, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-
-
 function LandingPage(){
     return(
         <>
