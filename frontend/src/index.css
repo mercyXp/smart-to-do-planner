@@ -14,7 +14,7 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --color-background: 0 0% 100%;
+  --color-background: 0 0% 100%; 
   --color-foreground: 222 84% 15%;
   --color-border: 220 13% 91%;
 
@@ -75,7 +75,7 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --color-background: 222 84% 5%;
+  --color-background: 222 84% 5%; 
   --color-foreground: 210 40% 95%;
   --color-border: 222 84% 11%;
 
