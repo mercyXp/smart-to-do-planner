@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { Moon, Sun } from "lucide-react";
 
 function ThemeToggleButton() {
   const { isDark, toggleTheme } = useTheme();
@@ -13,9 +12,9 @@ function ThemeToggleButton() {
       aria-label="Toggle theme"
     >
       {isDark ? (
-        <FontAwesomeIcon icon={faSun} className="text-yellow-400 w-5 h-5" />
+       <Moon className="h-4 w-4" />
       ) : (
-        <FontAwesomeIcon icon={faMoon} className="text-gray-700 w-5 h-5" />
+       <Sun className="h-4 w-4" />
       )}
     </button>
   );
