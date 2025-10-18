@@ -1,12 +1,10 @@
 import React from 'react';
 import ThemeToggleButton from '@/components/ThemeToggleButton';
+import Header from '@/components/Header';
 
 function App(){
    return (
-    <div className="min-h-screen bg-bg text-text flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-6">Smart To-Do Planner</h1>
-      <ThemeToggleButton />
-    </div>
+      <Header/>
   );
 }
 export default App;
