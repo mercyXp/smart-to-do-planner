@@ -125,3 +125,6 @@
     @apply bg-[rgb(var(--color-destructive-bg))] text-[rgb(var(--color-destructive-text))] font-semibold px-4 py-2 rounded-[var(--radius)] hover:opacity-90;
   }
 }
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
