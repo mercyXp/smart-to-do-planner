@@ -144,8 +144,8 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTH_USER_MODEL = 'users.User'
 
 AUTHENTICATION_BACKENDS = [
-    'users.backends.EmailOrUsernameBackend',
-    'django.contrib.auth.backends.ModelBackend',  # fallback default
+    'users.backends.EmailBackend',  # authenticate using email only
+    'django.contrib.auth.backends.ModelBackend',  # fallback
 ]
 
 

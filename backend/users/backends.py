@@ -1,19 +1,22 @@
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
-from django.db.models import Q
 
 UserModel = get_user_model()
 
-class EmailOrUsernameBackend(ModelBackend):
+class EmailBackend(ModelBackend):
     """
-    Allow login using either username or email.
+    Authenticate using email only.
     """
     def authenticate(self, request, username=None, password=None, **kwargs):
+        email = username
+        if email is None or password is None:
+            return None
         try:
-            user = UserModel.objects.get(Q(username=username) | Q(email=username))
+            user = UserModel.objects.get(email=email)
         except UserModel.DoesNotExist:
             return None
         else:
             if user.check_password(password) and self.user_can_authenticate(user):
                 return user
         return None
+
