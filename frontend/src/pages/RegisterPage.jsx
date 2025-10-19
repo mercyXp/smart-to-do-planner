@@ -58,13 +58,14 @@ function RegisterPage() {
       last_name: formData.last_name,
       email: formData.email,
       password: formData.password,
-      password2: formData.confirmPassword,
+      password2: formData.confirmPassword, // DRF serializer needs this
     };
 
     try {
+      // Send registration request
       await api.post("auth/register/", userData);
 
-      // Auto-login after registration
+      // Auto-login after successful registration
       const loginResponse = await api.post("auth/token/", {
         email: formData.email,
         password: formData.password,
@@ -75,8 +76,17 @@ function RegisterPage() {
 
       navigate("/dashboard");
     } catch (err) {
-      console.error(err);
-      setError(err.response?.data?.detail || "Registration failed. Try again.");
+      // Show full backend validation errors
+      console.error("Registration error:", err.response?.data);
+      if (err.response?.data) {
+        // Flatten DRF error object into a string
+        const messages = Object.entries(err.response.data)
+          .map(([field, msgs]) => `${field}: ${msgs.join(", ")}`)
+          .join(" | ");
+        setError(messages);
+      } else {
+        setError("Registration failed. Try again.");
+      }
     }
   };
 
