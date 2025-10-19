@@ -55,9 +55,11 @@ function RegisterPage() {
     }
 
     const userData = {
-      username: `${formData.first_name} ${formData.last_name}`, // Backend expects username
+      first_name: formData.first_name,
+      last_name: formData.last_name,
       email: formData.email,
       password: formData.password,
+      password2: formData.confirmPassword,
     };
 
     try {
