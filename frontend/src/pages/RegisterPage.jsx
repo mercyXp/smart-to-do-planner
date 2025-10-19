@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import api from "@/lib/api";
 
 function RegisterPage() {
-  const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const navigate = useNavigate();
+
+   // Prepare payload exactly as backend expects
+  const userData = {
+    first_name: formData.first_name,
+    last_name: formData.last_name,
+    email: formData.email,
+    password: formData.password,
+    password2: formData.confirmPassword, // required by serializer
+  };
 
   const [error, setError] = useState("");
 
@@ -35,7 +39,7 @@ function RegisterPage() {
     );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -50,15 +54,34 @@ function RegisterPage() {
       return;
     }
 
-    // Combine first and last name into one field for backend or UI
     const userData = {
-      name: `${formData.first_name} ${formData.last_name}`,
+      username: `${formData.first_name} ${formData.last_name}`, // Backend expects username
       email: formData.email,
       password: formData.password,
     };
 
-    console.log("Register form data:", userData);
-    // TODO: Connect this with your Django backend (POST /api/register/)
+    try {
+      // Register the user
+      await api.post("auth/register/", userData);
+
+      // Auto-login after registration
+      const loginResponse = await api.post("auth/token/", {
+        email: formData.email,
+        password: formData.password,
+      });
+
+      // Store tokens in localStorage
+      localStorage.setItem("access_token", loginResponse.data.access);
+      localStorage.setItem("refresh_token", loginResponse.data.refresh);
+
+      // Redirect to dashboard
+      navigate("/dashboard");
+    } catch (err) {
+      console.error(err);
+      setError(
+        err.response?.data?.detail || "Registration failed. Try again."
+      );
+    }
   };
 
   return (
