@@ -1,17 +1,36 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser  #AbstractUser — provides username, password, first_name, last_name, is_active, is_staff, etc.
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
-class User(AbstractUser): #Django already provides a built-in User system
-    """
-    Custom User model extending AbstractUser.
-    Login with username or email.
-    """
+class UserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('Email must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
 
-    email = models.EmailField(unique=True) # Ensure email is unique
-    is_email_verified = models.BooleanField(default=False) # Track if email is verified
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        return self.create_user(email, password, **extra_fields)
 
-    created_at = models.DateTimeField(auto_now_add=True)   # set once when created
-    updated_at = models.DateTimeField(auto_now=True)       # updated on each save
+class User(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(unique=True)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    is_email_verified = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name']  # no username needed
 
     def __str__(self):
-         return self.username or self.email
+        return self.email
