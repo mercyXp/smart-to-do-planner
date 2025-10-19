@@ -1,14 +1,16 @@
-import React from "react";
-import { cn } from "@/lib/utils"; // or replace with a local function if not using shadcn utils
+import React, { forwardRef } from "react";
+import { cn } from "@/lib/utils";
 
-// Simple fallback if you don’t have the cn() helper
-// const cn = (...classes) => classes.filter(Boolean).join(" ");
-
-const Card = React.forwardRef(({ className = "", ...props }, ref) => (
+// ==============================
+// Main Card container
+// ==============================
+const Card = forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card border-card-border text-card-foreground shadow-sm",
+      "group relative rounded-2xl border border-border/60 bg-gradient-to-br from-background via-background/95 to-muted/30 text-foreground shadow-sm transition-all duration-300",
+      "hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 dark:hover:border-primary/30",
+      "backdrop-blur-sm overflow-hidden",
       className
     )}
     {...props}
@@ -16,26 +18,41 @@ const Card = React.forwardRef(({ className = "", ...props }, ref) => (
 ));
 Card.displayName = "Card";
 
-const CardHeader = React.forwardRef(({ className = "", ...props }, ref) => (
+// ==============================
+// Card Header
+// ==============================
+const CardHeader = forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    className={cn(
+      "flex flex-col space-y-1.5 p-5 border-b border-border/40 bg-gradient-to-r from-transparent via-transparent to-background/50",
+      className
+    )}
     {...props}
   />
 ));
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = React.forwardRef(({ className = "", ...props }, ref) => (
-  <div
+// ==============================
+// Card Title
+// ==============================
+const CardTitle = forwardRef(({ className, ...props }, ref) => (
+  <h3
     ref={ref}
-    className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
+    className={cn(
+      "text-xl font-semibold leading-none tracking-tight text-foreground/90 group-hover:text-primary transition-colors",
+      className
+    )}
     {...props}
   />
 ));
 CardTitle.displayName = "CardTitle";
 
-const CardDescription = React.forwardRef(({ className = "", ...props }, ref) => (
-  <div
+// ==============================
+// Card Description
+// ==============================
+const CardDescription = forwardRef(({ className, ...props }, ref) => (
+  <p
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
@@ -43,18 +60,38 @@ const CardDescription = React.forwardRef(({ className = "", ...props }, ref) => 
 ));
 CardDescription.displayName = "CardDescription";
 
-const CardContent = React.forwardRef(({ className = "", ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+// ==============================
+// Card Content
+// ==============================
+const CardContent = forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("p-6 pt-4 flex flex-col gap-3", className)}
+    {...props}
+  />
 ));
 CardContent.displayName = "CardContent";
 
-const CardFooter = React.forwardRef(({ className = "", ...props }, ref) => (
+// ==============================
+// Card Footer
+// ==============================
+const CardFooter = forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center justify-between p-5 pt-0 border-t border-border/40", className)}
     {...props}
   />
 ));
 CardFooter.displayName = "CardFooter";
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent };
+// ==============================
+// Export all
+// ==============================
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+};
