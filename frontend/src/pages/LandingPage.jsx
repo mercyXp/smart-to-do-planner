@@ -107,19 +107,30 @@ function LandingPage(){
              </section>
              {/* CTA Section */}
             <section className="container mx-auto px-4 py-16">
-                <Card className="bg-primary text-primary-foreground">
-                    <CardContent className="p-12 pt-20 text-center">
-                        <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Productivity?</h3>
-                            <p className="text-lg mb-8 text-[#001F3F] dark:text-primary-foreground/90">
-                                Join thousands of users who have achieved their goals with Smart To-Do Planner
-                            </p>
-                        <Button size="lg" variant="secondary" className="text-lg px-8" data-testid="button-cta">
-                        Start Your Free Trial
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                    </CardContent>
-                </Card>
+            <Card className="bg-[hsl(var(--color-primary))] text-[hsl(var(--color-primary-foreground))] shadow-xl border border-transparent">
+                <CardContent className="p-12 pt-20 text-center space-y-6">
+                <h3 className="text-3xl font-bold">
+                    Ready to Transform Your Productivity?
+                </h3>
+                <p className="text-lg text-[hsl(var(--color-primary-foreground)/90)] max-w-xl mx-auto">
+                    Join thousands of users who have achieved their goals with Smart To-Do Planner
+                </p>
+                <Button
+                    size="lg"
+                    className="text-lg px-8 py-3 font-semibold transition 
+                            bg-[hsl(var(--color-primary-foreground))] 
+                            text-[hsl(var(--color-primary))] 
+                          hover:bg-[#020711] 
+                            hover:text-[hsl(var(--color-primary))]"
+                    data-testid="button-cta"
+                >
+                    Start Your Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                </CardContent>
+            </Card>
             </section>
+
         </>
     );
 }
