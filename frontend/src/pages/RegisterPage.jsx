@@ -7,14 +7,13 @@ import api from "@/lib/api";
 function RegisterPage() {
   const navigate = useNavigate();
 
-   // Prepare payload exactly as backend expects
-  const userData = {
-    first_name: formData.first_name,
-    last_name: formData.last_name,
-    email: formData.email,
-    password: formData.password,
-    password2: formData.confirmPassword, // required by serializer
-  };
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const [error, setError] = useState("");
 
@@ -63,7 +62,6 @@ function RegisterPage() {
     };
 
     try {
-      // Register the user
       await api.post("auth/register/", userData);
 
       // Auto-login after registration
@@ -72,17 +70,13 @@ function RegisterPage() {
         password: formData.password,
       });
 
-      // Store tokens in localStorage
       localStorage.setItem("access_token", loginResponse.data.access);
       localStorage.setItem("refresh_token", loginResponse.data.refresh);
 
-      // Redirect to dashboard
       navigate("/dashboard");
     } catch (err) {
       console.error(err);
-      setError(
-        err.response?.data?.detail || "Registration failed. Try again."
-      );
+      setError(err.response?.data?.detail || "Registration failed. Try again.");
     }
   };
 
