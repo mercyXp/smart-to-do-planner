@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Plus, Target, CheckCircle, TrendingUp, Calendar, Filter } from "lucide-react";
 import API from "@/lib/api"; // axios instance -> baseURL: http://127.0.0.1:8000/api/
 import { AuthContext } from "@/contexts/AuthContext";
-import GoalCard from "./GoalCard";
-import TaskCard from "./TaskCard";
-import ProgressChart from "./ProgressChart";
+import GoalCard from "@/GoalCard";
+import TaskCard from "@/TaskCard";
+import ProgressChart from "@/ProgressChart";
 
 export default function Dashboard() {
   const { user } = useContext(AuthContext);
