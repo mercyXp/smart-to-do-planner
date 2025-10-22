@@ -59,12 +59,12 @@ It’s a personal productivity companion that allows users to:
 
 ## 🧾 Key Features
 
-✅ Create and manage **long-term goals**
-✅ Break goals into **weekly and daily tasks**
-✅ View **progress analytics and trends**
-✅ Get **completion rate insights**
-✅ Beautiful, **responsive UI** for desktop and mobile
-✅ Secure **user authentication** and data persistence
+- Create and manage **long-term goals**
+-  Break goals into **weekly and daily tasks**
+-  View **progress analytics and trends**
+-  Get **completion rate insights**
+-  Beautiful, **responsive UI** for desktop and mobile
+-  Secure **user authentication** and data persistence
 
 ---
 
