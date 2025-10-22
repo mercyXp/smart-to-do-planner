@@ -119,7 +119,7 @@ The Django API will run on **[http://localhost:8000](http://localhost:8000)**
 ## 👩‍💻 Author
 
 **Mercy Munzenzi**
-Tech Enthusiast | Backend Developer | DevOps Engineer in training
+Tech Enthusiast | Full Stack Developer | DevOps Engineer in training
 🌐 [LinkedIn](https://www.linkedin.com/in/mercy-munzenzi-183056362/)
 
 ---
