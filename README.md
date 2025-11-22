@@ -27,7 +27,7 @@ It’s a personal productivity companion that allows users to:
 | **Frontend**           | **React.js**                    | Provides a dynamic and component-based UI experience                     |
 | **Styling**            | **Tailwind CSS**                | Enables rapid and responsive UI development with utility-first design    |
 | **Backend**            | **Django (Python)**             | Handles data processing, business logic, and analytics                   |
-| **Database**           | **SQLite / PostgreSQL**         | Stores user goals, tasks, progress, and insights                         |
+| **Database**           | **PostgreSQL**                  | Stores user goals, tasks, progress, and insights                         |
 | **API**                | **Django REST Framework (DRF)** | Provides structured RESTful endpoints for frontend-backend communication |
 | **State Management**   | React Hooks / Context API       | Manages app-wide state like task updates, filters, and authentication    |
 | **Charts & Analytics** | Chart.js / Recharts             | Displays progress insights and weekly activity trends                    |
